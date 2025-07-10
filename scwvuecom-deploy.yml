@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: scwvuecom
+  name: scwvuecom
+spec:
+  selector:
+    matchLabels:
+      app: scwvuecom
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: scwvuecom
+    spec:
+      containers:
+      - image: jkozik/scwvue.com:v2.0
+        imagePullPolicy: IfNotPresent
+        name: scwvuecom
+        ports:
+        - containerPort: 80
+          name: scwvuecom
+        resources:
+          limits:
+            ephemeral-storage: 20M
+            memory: 200M
+          requests:
+            ephemeral-storage: 10M
+            memory: 100M
+        volumeMounts:
+        - mountPath: /var/www/html/mount
+          name: scwvuecom-persistent-storage
+      volumes:
+      - name: scwvuecom-persistent-storage
+        persistentVolumeClaim:
+          claimName: scwvuecom-persistent-storage
+
