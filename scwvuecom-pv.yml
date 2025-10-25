@@ -6,12 +6,12 @@ metadata:
     app: scwvuecom
 spec:
   capacity:
-    storage: 1Gi
+    storage: 5Gi
   accessModes:
     - ReadOnlyMany
   nfs:
-    server: 192.168.101.152
+    server: 192.168.100.153
     # Exported path of your NFS server
     #     path: "/var/nfsshare/nginxhtml"  # make sure this directory exists.
-    path: "/home/sancap/public_html"
-  storageClassName: nfs
+    path: "/home/nfs/weather-stations/sancap/public_html"
+  storageClassName: nfs-weather
