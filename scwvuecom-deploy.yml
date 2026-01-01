@@ -16,7 +16,7 @@ spec:
         app: scwvuecom
     spec:
       containers:
-      - image: jkozik/scwvue.com:v2.2
+      - image: jkozik/scwvue.com:v2.3
         imagePullPolicy: IfNotPresent
         name: scwvuecom
         ports:

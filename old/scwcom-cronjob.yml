@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: saveyesterday
+spec:
+  schedule: "58 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: saveyesterday
+            image: buildpack-deps:curl
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            #- curl http://scwcom/saveYesterday.php?force=true
+            - curl http://scwcom/saveYesterday.php
+          restartPolicy: OnFailure

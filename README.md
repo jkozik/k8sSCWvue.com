@@ -100,3 +100,9 @@ ingress-nginx-controller-admission   ClusterIP   10.111.250.10   <none>        4
         <!-- language for AJAX script included -->
 100  8004    0  8004    0     0   1804      0 --:--:--  0:00:04 --:--:--  2332
 ```
+## Ingress --> HttpRoute
+I have installed the Gateway API on this cluster.  It is called ` Gateway running in `envoy-gateway-system` namespace.
+
+The HTTPRoute yaml points sancapweather.com and www.sancapweather.com from my Cloudflare tunnel to port 30458.
+
+Ingress has been depricated.
