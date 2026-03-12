@@ -16,7 +16,7 @@ spec:
         app: scwvuecom
     spec:
       containers:
-      - image: jkozik/scwvue.com:v2.3
+      - image: jkozik/scwvue.com:v2.4
         imagePullPolicy: IfNotPresent
         name: scwvuecom
         ports:
@@ -24,10 +24,10 @@ spec:
           name: scwvuecom
         resources:
           limits:
-            ephemeral-storage: 20M
+            ephemeral-storage: 200M
             memory: 200M
           requests:
-            ephemeral-storage: 10M
+            ephemeral-storage: 100M
             memory: 100M
         volumeMounts:
         - mountPath: /var/www/html/mount
