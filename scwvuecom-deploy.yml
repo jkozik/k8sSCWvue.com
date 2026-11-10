@@ -24,7 +24,7 @@ spec:
                 app: scwvuecom
             topologyKey: kubernetes.io/hostname      
       containers:
-      - image: jkozik/scwvue.com:v2.6
+      - image: jkozik/scwvue.com:v2.7
         imagePullPolicy: IfNotPresent
         name: scwvuecom
         ports:
